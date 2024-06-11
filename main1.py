@@ -61,11 +61,10 @@ def ShowBooks(k) :
 def SelectBooks(category):
     BooksList = categorized_files[category]
     UserInputSelectBook = int(input("Enter The number in front of the book you want to select it : "))
-    if UserInputSelectBook in range(1,(len(BooksList) - 1)) :
-        SelectedBook = BooksList[UserInputSelectBook]
+    if UserInputSelectBook in range(1,(len(BooksList) + 1)) :
+        SelectedBook = BooksList[UserInputSelectBook -1]
         SelectedBookPath = FolderPath + "/" + SelectedBook
         open_file_with_default_program(SelectedBookPath)
-        # UserOption = int(input("enter 1 to open the book and "))
 
 def open_file_with_default_program(file_path):
     system = platform.system()
